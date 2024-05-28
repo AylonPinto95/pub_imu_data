@@ -64,9 +64,9 @@ private:
     InertialSense inertialSenseInterface(cltool_dataCallback);
     cmd_options_t g_commandLineOptions = {};
 
-    if (!inertialSenseInterface.Open("/dev/ttyACMO", g_commandLineOptions.baudRate, g_commandLineOptions.disableBroadcastsOnClose))
+    if (!inertialSenseInterface.Open("/dev/ttyACM0", g_commandLineOptions.baudRate, g_commandLineOptions.disableBroadcastsOnClose))
     {
-        cout << "Failed to open serial port at " << "/dev/ttyACMO" << endl;
+        cout << "Failed to open serial port at " << "/dev/ttyACM0" << endl;
         return -1;    // Failed to open serial port
     }
 
