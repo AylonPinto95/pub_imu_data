@@ -55,6 +55,7 @@ private:
     // Ensure this static callback function has access to the ImuPublisher instance
     if (instance_)
     {
+      cout << 'data callback' << endl
       instance_->imu_callback(data);
     }
   }
