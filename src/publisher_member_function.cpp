@@ -140,13 +140,11 @@ private:
 ImuPublisher* ImuPublisher::instance_ = nullptr;
 
 int main(int argc, char * argv[])
-{ 
-  cltool_main(argc, argv);
-  
-  // rclcpp::init(argc, argv);
-  // auto node = std::make_shared<ImuPublisher>();
-  // ImuPublisher::instance_ = node.get();
-  // rclcpp::spin(node);
-  // rclcpp::shutdown();
-  // return 0;
+{   
+  rclcpp::init(argc, argv);
+  auto node = std::make_shared<ImuPublisher>();
+  ImuPublisher::instance_ = node.get();
+  rclcpp::spin(node);
+  rclcpp::shutdown();
+  return 0;
 }
