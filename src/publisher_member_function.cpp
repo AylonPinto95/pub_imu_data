@@ -52,12 +52,10 @@ private:
 
   static void cltool_dataCallback(InertialSense* i, p_data_t* data, int pHandle)
   {
-    // Ensure this static callback function has access to the ImuPublisher instance
-    if (instance_)
-    {
-      cout << 'data callback' << endl;
-      instance_->imu_callback(data);
-    }
+
+    cout << 'data callback' << endl;
+    instance_->imu_callback(data);
+
   }
 
   static int cltool_dataStreaming()
