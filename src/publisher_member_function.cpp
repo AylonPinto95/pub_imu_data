@@ -6,7 +6,7 @@
 #include "rclcpp/rclcpp.hpp"
 #include <sensor_msgs/msg/imu.hpp>
 
-#include "../../inertial-sense-sdk/cltool/src/cltool.h"
+#include "../inertial-sense-sdk/cltool/src/cltool.h"
 #include "InertialSense.h"
 
 using namespace std::chrono_literals;
@@ -55,7 +55,7 @@ private:
     // Ensure this static callback function has access to the ImuPublisher instance
     if (instance_)
     {
-      cout << 'data callback' << endl
+      cout << 'data callback' << endl;
       instance_->imu_callback(data);
     }
   }
