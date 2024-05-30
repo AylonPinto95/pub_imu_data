@@ -52,6 +52,10 @@ private:
 
   static void cltool_dataCallback(InertialSense* i, p_data_t* data, int pHandle)
   {
+    uDatasets d = {};
+    copyDataPToStructP(&d, data, sizeof(uDatasets));
+
+    cout << "data: " << d.ins2.qn2b[1] << endl;
     // Ensure this static callback function has access to the ImuPublisher instance
     if (instance_)
     {
